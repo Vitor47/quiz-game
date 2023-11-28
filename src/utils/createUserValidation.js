@@ -9,4 +9,10 @@ export const createUserSchema = yup.object().shape({
         .string()
         .email("Deve estar no formato de e-mail")
         .required("O e-mail é obrigatório"),
+    numberOfQuestions: yup
+        .integer()
+        .required("O número de questões é obrigatório"),
+    difficulty: yup
+        .integer()
+        .required("A dificuldade é obrigatória"),
 });
