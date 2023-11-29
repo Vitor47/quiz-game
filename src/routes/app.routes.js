@@ -1,20 +1,35 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ListTasks from '../pages/ListTasks';
+import GameScreen from '../pages/GameScreen';
+import EndGame from '../pages/EndGame';
 
-const AuthStack = createNativeStackNavigator();
+const AppStack = createNativeStackNavigator();
 
-function AuthRoutes() {
+function AppRoutes() {
     return (
-        <AuthStack.Navigator>
-            <AuthStack.Screen
+        <AppStack.Navigator>
+            <AppStack.Screen
                 name="ListTasks"
                 component={ListTasks}
                 options={{
                     headerShown: false,
                 }}
             />
-        </AuthStack.Navigator>
+            <AppStack.Screen 
+                name="GameScreen" 
+                component={GameScreen} 
+                options={{
+                    headerShown: false
+                }} 
+            />
+            <AppStack.Screen
+                name="EndGame"
+                component={EndGame}
+                options={{
+                    headerShown: false
+                }}
+            />
+        </AppStack.Navigator>
     )
 }
 
-export default AuthRoutes;
+export default AppRoutes;

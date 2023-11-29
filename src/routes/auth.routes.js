@@ -1,7 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import SignIn from '../pages/SignIn';
+import Start from '../pages/Start'
+import Home from '../pages/Home'
 
 const AuthStack = createNativeStackNavigator();
 
@@ -9,8 +9,15 @@ function AuthRoutes() {
     return (
         <AuthStack.Navigator>
             <AuthStack.Screen
-                name="SignIn"
-                component={SignIn}
+                name="Start"
+                component={Start}
+                options={{
+                    headerShown: false,
+                }}
+            />
+            <AuthStack.Screen
+                name="Home"
+                component={Home}
                 options={{
                     headerShown: false,
                 }}
