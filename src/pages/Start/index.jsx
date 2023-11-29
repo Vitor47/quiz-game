@@ -6,7 +6,7 @@ import { Baloon } from "../../components/Baloon";
 export default function Start() {
   return (
     <Container>
-      <ScrollViewContent>
+      <ScrollViewContent scrollEnabled={false}>
         <HeaderImg source={questionsImage} />
         <Baloon title="Quiz Game" text="The best quiz game around"></Baloon>
       </ScrollViewContent>

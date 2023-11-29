@@ -7,12 +7,12 @@ export const SubmitButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  background: #68B2F8;
+  background: #68b2f8;
 `;
 
 export const SubmitText = styled.Text`
-  color: #FFF;
-  color: #FFF;
+  color: #fff;
+  color: #fff;
   text-align: center;
   font-size: 24px;
   font-style: normal;
