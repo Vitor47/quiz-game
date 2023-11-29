@@ -1,17 +1,14 @@
-import React, { useState, useContext } from "react";
-import { Platform } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
-
-import { AuthContext } from "../../contexts/auth";
 import { Container, ScrollViewContent, HeaderImg } from "./styles";
 import questionsImage from "../../../assets/images/questions.png";
+import { Baloon } from "../../components/Baloon";
 
 export default function Start() {
   return (
     <Container>
       <ScrollViewContent>
-        <HeaderImg source={questionsImage}/>
+        <HeaderImg source={questionsImage} />
+        <Baloon title="Quiz Game" text="The best quiz game around"></Baloon>
       </ScrollViewContent>
     </Container>
   );
