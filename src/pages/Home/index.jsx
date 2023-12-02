@@ -47,7 +47,7 @@ export default function Home() {
       newData.append("email", data.email);
       newData.append("numberOfQuestions", data.numberOfQuestions);
       newData.append("difficulty", data.difficulty);
-      push(ref(db, "/tasks"), newData);
+      push(ref(db, "/users"), newData);
 
       reset({
         name: "",
