@@ -4,7 +4,7 @@ import { Text, View, SafeAreaView, ScrollView } from "react-native";
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
-  background-color: #2094ff;
+  background-color: #9f7fff;
   padding-bottom: 12%;
 `;
 

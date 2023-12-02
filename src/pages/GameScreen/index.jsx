@@ -7,11 +7,10 @@ import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "../../contexts/auth";
 
 export default function GameScreen() {
+  console.log("game screen");
   return (
     <Container>
-      <ScrollViewContent scrollEnabled={false}>
-        <HeaderImg source={sword} />
-      </ScrollViewContent>
+      <ScrollViewContent scrollEnabled={false}></ScrollViewContent>
     </Container>
   );
 }
