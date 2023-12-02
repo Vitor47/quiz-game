@@ -28,7 +28,7 @@ function Routes() {
   //   signed ? <AppRoutes/> : <AuthRoutes/>
   // )
 
-  return <AppRoutes />;
+  return <AuthRoutes />;
 }
 
 export default Routes;
