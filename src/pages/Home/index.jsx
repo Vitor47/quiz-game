@@ -1,3 +1,4 @@
+import { Keyboard, Alert } from "react-native";
 import React, { useState, useContext } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { LevelButton } from "../../components/HexagonalButton";
@@ -38,15 +39,16 @@ export default function Home() {
   });
 
   const onSubmit = async (data) => {
-    console.log("oi");
+    signIn(data);
+
     Keyboard.dismiss();
     try {
-      const newData = new FormData();
-      console.log(data);
-      newData.append("name:", data.name);
-      newData.append("email", data.email);
-      newData.append("numberOfQuestions", data.numberOfQuestions);
-      newData.append("difficulty", data.difficulty);
+      const newData = {
+        "name":  data.name,
+        "email": data.email,
+        "numberOfQuestions": data.numberOfQuestions,
+        "difficulty": data.difficulty
+      }
       push(ref(db, "/users"), newData);
 
       reset({
@@ -64,7 +66,7 @@ export default function Home() {
 
   return (
     <Container>
-      <ScrollViewContent scrollEnabled={false}>
+      <ScrollViewContent>
         <HeaderImg source={Sword} />
         <FormArea>
           <InputContainer>

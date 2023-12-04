@@ -3,6 +3,7 @@ import { Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { ref, push } from 'firebase/database';
+import { db } from '../services/firebaseConnection';
 
 export const AuthContext = createContext({});
 
@@ -27,9 +28,8 @@ function AuthProvider({ children }) {
   async function signIn(data){
     await push(ref(db, "/users"), data)
     .then( (value) => {
-      console.log(value);
-      setUser(value);
-      AsyncStorage.setItem('@user', JSON.stringify(value));
+      setUser(data);
+      AsyncStorage.setItem('@user', JSON.stringify(data));
     })
     .catch( (error) => {        
         Alert.alert('Erro ao entrar!');
