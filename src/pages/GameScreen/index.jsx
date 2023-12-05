@@ -24,7 +24,7 @@ export default function GameScreen() {
       const storageUser = JSON.parse(await AsyncStorage.getItem("@user"));
       setUser(storageUser);
 
-            const response = await api.get(
+      const response = await api.get(
         `?amount=${storageUser.numberOfQuestions}&category=18&difficulty=${storageUser.difficulty}&type=multiple`
       );
 
@@ -58,10 +58,11 @@ export default function GameScreen() {
       setIncorrectAnswers(incorrectAnswers + 1);
     }
 
-    if ((currentQuestionIndex + 1) >= user.numberOfQuestions) {
+    if (currentQuestionIndex + 1 >= user.numberOfQuestions) {
       navigation.navigate("EndGame", {
         correctAnswers: correctAnswers,
         incorrectAnswers: incorrectAnswers,
+        numberOfQuestions: numberOfQuestions,
       });
     }
   };

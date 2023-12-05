@@ -60,8 +60,6 @@ export default function Home() {
         numberOfQuestions: 0,
         difficulty: 0,
       });
-
-      navigation.navigate("GameScreen");
     } catch (error) {
       Alert.alert("Erro ao criar: ", error.message);
     }
