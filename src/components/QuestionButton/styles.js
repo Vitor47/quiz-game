@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const Button = styled.View`
+export const Button = styled.TouchableOpacity`
   padding: 15px;
   margin: 10px;
   height: 60px;
@@ -9,8 +9,10 @@ export const Button = styled.View`
   border: 0.7px solid #fff;
   border-radius: 8px;
   background-color: #ff8c00;
+  margin-top: 8px;
 `;
 export const ButtonText = styled.Text`
   font-size: 20px;
   color: #fff;
+  padding: 12px;
 `;

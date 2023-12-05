@@ -126,7 +126,7 @@ export default function Home() {
                   />
                 </>
               )}
-              name="questions"
+              name="numberOfQuestions"
             />
           </InputContainer>
           {/* botoes hexagonais, ainda não terminei */}

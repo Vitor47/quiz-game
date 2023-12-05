@@ -14,7 +14,7 @@ export const createGameSchema = yup.object().shape({
     .required("A quantidade de questões é obrigatória")
     .oneOf([10, 20, 30], "A quantidade de questões deve ser 10, 20 ou 30"),
   difficulty: yup
-    .string()
-    .required("A dificuldade é obrigatória")
-    .oneOf(["easy", "medium", "hard"], "A dificuldade deve ser easy, medium ou hard"),
+  .string()
+  .required("A dificuldade é obrigatória")
+  .oneOf(["easy", "medium", "hard"], "A dificuldade deve ser easy, medium ou hard"),
 });

@@ -18,7 +18,7 @@ export const TitleBaloon = styled.Text`
   font-weight: 900;
   line-height: 36px;
   text-transform: uppercase;
-  top: ${({ hasText }) => (hasText ? "0%" : "8%")};
+  top: ${({ hasText }) => (hasText ? "0%" : "6%")};
 `;
 
 export const TextBaloon = styled.Text`
