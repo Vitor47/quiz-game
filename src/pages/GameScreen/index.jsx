@@ -11,21 +11,25 @@ import { QuestionButton } from "../../components/QuestionButton";
 import { Container, ScrollViewContent, HeaderImg, TitlePage } from "./styles";
 
 export default function GameScreen() {
+  const navigation = useNavigation();
+
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState({});
+
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [incorrectAnswers, setIncorrectAnswers] = useState(0);
 
   const loadQuestions = async () => {
     try {
       const storageUser = JSON.parse(await AsyncStorage.getItem("@user"));
+      setUser(storageUser);
 
-      console.log(typeof storageUser);
-
-      console.log(
-        `?amount=${storageUser.numberOfQuestions}&category=18&difficulty=${storageUser.difficulty}&type=multiple`
-      );
+      console.log(`?amount=10&category=18&difficulty=easy&type=multiple`);
+      
       const response = await api.get(
-        `?amount=10&category=18&difficulty=easy&type=multiple`
+        `?amount=${storageUser.numberOfQuestions}&category=18&difficulty=${storageUser.difficulty}&type=multiple`
       );
 
       console.log(response.data.results);
@@ -41,13 +45,33 @@ export default function GameScreen() {
     loadQuestions();
   }, []);
 
+  const optionsQuestion =
+    questions[currentQuestionIndex]?.incorrect_answers || [];
+  const correctAnswer = questions[currentQuestionIndex]?.correct_answer || "";
+  optionsQuestion.pop();
+  optionsQuestion.push(correctAnswer);
+  const question = questions[currentQuestionIndex]?.question || "";
+
   const navigateToNextQuestion = () => {
-    setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    return setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
 
   const handleOptionPress = (selectedOption) => {
-    console.log("Selected Option:", selectedOption);
     navigateToNextQuestion();
+    console.log(currentQuestionIndex, user.numberOfQuestions);
+
+    if (selectedOption == correctAnswer) {
+      setCorrectAnswers(correctAnswers + 1);
+    } else {
+      setIncorrectAnswers(incorrectAnswers + 1);
+    }
+
+    if (currentQuestionIndex > user.numberOfQuestions) {
+      navigation.navigate("EndGame", {
+        correctAnswers: correctAnswers,
+        incorrectAnswers: incorrectAnswers,
+      });
+    }
   };
 
   if (loading) {
@@ -58,23 +82,16 @@ export default function GameScreen() {
     );
   }
 
-  const optionsQuestion = questions[currentQuestionIndex]?.incorrect_answers || [];
-  const correctAnswer = questions[currentQuestionIndex]?.correct_answer || "";
-
   return (
     <Container>
       <ScrollViewContent>
         <TitlePage>{`Question ${currentQuestionIndex + 1}`}</TitlePage>
-        <Baloon
-          title={
-            questions[currentQuestionIndex]?.question || "No question available"
-          }
-        />
+        <Baloon title={question || "No question available"} />
         {optionsQuestion.map((option, index) => (
           <QuestionButton
             key={index}
             onPress={() => handleOptionPress(option)}
-            title={option}
+            text={option}
           />
         ))}
       </ScrollViewContent>

@@ -118,7 +118,7 @@ export default function Home() {
               render={({ field: { onChange, value } }) => (
                 <>
                   <Input
-                    name="questions"
+                    name="numberOfQuestions"
                     placeholder="Type the number of questions"
                     onChangeText={onChange}
                     selectionColor="#fff"
@@ -129,7 +129,7 @@ export default function Home() {
                   />
                 </>
               )}
-              name="questions"
+              name="numberOfQuestions"
             />
           </InputContainer>
           {/* botoes hexagonais, ainda não terminei */}
