@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import {  View, SafeAreaView, ScrollView } from "react-native";
+import { View, SafeAreaView, ScrollView } from "react-native";
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
@@ -8,9 +8,9 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const HeaderImg = styled.Image`
-  width: 50%;
+  width: 40%;
   height: 220px;
-  left: 25%;
+  left: 30%;
   top: 35px;
 `;
 
@@ -21,7 +21,7 @@ export const ScrollViewContent = styled(ScrollView)`
 export const FormArea = styled.View`
   padding: 18px;
   border-radius: 5px;
-  margin-bottom: 8px;
+  margin-bottom: 65px;
   top: 12%;
 `;
 
