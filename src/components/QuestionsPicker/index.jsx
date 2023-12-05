@@ -24,7 +24,7 @@ const QuestionPicker = ({ control, value, onChange, errors }) => {
               <Picker.Item label="30" value="30" />
             </Picker>
           )}
-          name="category"
+          name="questions"
         />
       </PickerContainer>
       {errors.category && <ErrorText>{errors.category.message}</ErrorText>}

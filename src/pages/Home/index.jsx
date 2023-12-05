@@ -10,6 +10,7 @@ import Sword from "../../../assets/images/sword.png";
 import { StartButton } from "../../components/SubmitButton";
 import { ref, push } from "firebase/database";
 import { db } from "../../services/firebaseConnection";
+import QuestionPicker from "../../components/QuestionsPicker";
 import {
   Container,
   ScrollViewContent,
@@ -117,15 +118,11 @@ export default function Home() {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <>
-                  <Input
-                    name="questions"
-                    placeholder="Type the number of questions"
-                    onChangeText={onChange}
-                    selectionColor="#fff"
-                    placeholderTextColor="#fff"
+                  <QuestionPicker
+                    control={control}
                     value={value}
+                    onChange={onChange}
                     errors={errors}
-                    secureTextEntry={false}
                   />
                 </>
               )}
