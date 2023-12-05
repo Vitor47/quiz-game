@@ -62,7 +62,6 @@ export default function GameScreen() {
       navigation.navigate("EndGame", {
         correctAnswers: correctAnswers,
         incorrectAnswers: incorrectAnswers,
-        numberOfQuestions: numberOfQuestions,
       });
     }
   };
