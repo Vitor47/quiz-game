@@ -8,15 +8,12 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const ScrollViewContent = styled(ScrollView)`
-  padding: 20px;
-  bottom: 70px;
+  padding: 0px;
 `;
 
-export const FormArea = styled.View`
-  border-radius: 5px;
-  margin-bottom: 8px;
-  top: 150px;
-  max-height: 70px;
+export const ContainerContext = styled.View`
+  display: flex;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -24,13 +21,13 @@ export const ResultTitle = styled.Text`
   font-size: 45px;
   font-weight: bold;
   color: #fff;
+  margin-top: 10%;
 `;
 
 export const ResultMessage = styled.Text`
   font-size: 20px;
-  top: 210px;
+  margin-top: 8%;
   color: #fff;
-  left: 103px;
 `;
 
 export const CheckImg = styled.Image`
@@ -38,23 +35,17 @@ export const CheckImg = styled.Image`
   width: 200px;
   max-height: 200px;
   padding: 18px;
-  top: 200px;
-  align-items: center;
-  left: 95px;
 `;
 
 export const StarImg = styled.Image`
   height: 60px;
   width: 140px;
-  top: 180px;
-  align-items: center;
-  left: 123px;
 `;
 
 export const ButtonArea = styled.View`
   padding: 10px;
   width: 100%;
   height: 250px;
-  top: 230px;
   align-items: center;
+  margin-top: 8%;
 `;
