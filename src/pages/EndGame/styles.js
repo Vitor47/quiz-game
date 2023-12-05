@@ -9,6 +9,7 @@ export const Container = styled(SafeAreaView)`
 
 export const ScrollViewContent = styled(ScrollView)`
   padding: 20px;
+  bottom: 70px;
 `;
 
 export const FormArea = styled.View`
@@ -48,4 +49,12 @@ export const StarImg = styled.Image`
   top: 180px;
   align-items: center;
   left: 123px;
+`;
+
+export const ButtonArea = styled.View`
+  padding: 10px;
+  width: 100%;
+  height: 250px;
+  top: 230px;
+  align-items: center;
 `;

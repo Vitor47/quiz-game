@@ -44,11 +44,11 @@ export default function Home() {
     Keyboard.dismiss();
     try {
       const newData = {
-        "name":  data.name,
-        "email": data.email,
-        "numberOfQuestions": data.numberOfQuestions,
-        "difficulty": data.difficulty
-      }
+        name: data.name,
+        email: data.email,
+        numberOfQuestions: data.numberOfQuestions,
+        difficulty: data.difficulty,
+      };
       push(ref(db, "/users"), newData);
 
       reset({
