@@ -20,7 +20,7 @@ export const ScrollViewContent = styled(ScrollView)`
 export const FormArea = styled.View`
   padding: 18px;
   border-radius: 5px;
-  margin-bottom: 65px;
+  margin-bottom: 0px;
 `;
 
 export const InputContainer = styled(View)`
