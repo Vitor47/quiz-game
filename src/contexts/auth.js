@@ -15,8 +15,6 @@ function AuthProvider({ children }) {
 
   useEffect(() => {
     async function loadStorage() {
-      await AsyncStorage.clear();
-      console.log("opa");
       const storageUser = await AsyncStorage.getItem("@user");
       if (storageUser) {
         setUser(JSON.parse(storageUser));
