@@ -4,8 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import api from "../../services/api";
-
-import { AuthContext } from "../../contexts/auth";
 import { Baloon } from "../../components/Baloon";
 import { QuestionButton } from "../../components/QuestionButton";
 import { Container, ScrollViewContent, HeaderImg, TitlePage } from "./styles";
@@ -25,8 +23,8 @@ export default function GameScreen() {
     try {
       const storageUser = JSON.parse(await AsyncStorage.getItem("@user"));
       setUser(storageUser);
-      
-      const response = await api.get(
+
+            const response = await api.get(
         `?amount=${storageUser.numberOfQuestions}&category=18&difficulty=${storageUser.difficulty}&type=multiple`
       );
 
@@ -54,8 +52,6 @@ export default function GameScreen() {
 
   const handleOptionPress = (selectedOption) => {
     navigateToNextQuestion();
-    console.log(currentQuestionIndex, user.numberOfQuestions);
-
     if (selectedOption == correctAnswer) {
       setCorrectAnswers(correctAnswers + 1);
     } else {

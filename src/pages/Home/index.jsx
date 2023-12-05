@@ -138,8 +138,8 @@ export default function Home() {
                 <>
                   <Input
                     name="numberOfQuestions"
-                    placeholder="Type the difficulty"
-                    keyboardType="number"
+                    placeholder="Number Of Questions"
+                    keyboardType="numeric"
                     control={control}
                     onChangeText={onChange}
                     selectionColor="#fff"
