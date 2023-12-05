@@ -19,6 +19,7 @@ import {
   Input,
   HeaderImg,
   InputContainerPicker,
+  HexagonalContainer,
 } from "./styles";
 
 export default function Home() {
@@ -114,7 +115,7 @@ export default function Home() {
             />
           </InputContainer>
 
-          <InputContainerPicker>
+          {/* <InputContainerPicker>
             <Controller
               control={control}
               render={({ field: { onChange, value } }) => (
@@ -129,9 +130,51 @@ export default function Home() {
               )}
               name="numberOfQuestions"
             />
-          </InputContainerPicker>
-          {/* botoes hexagonais, ainda não terminei */}
-          {/* <LevelButton text="1" /> */}
+          </InputContainerPicker> */}
+          <InputContainer>
+            <Controller
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <>
+                  <Input
+                    name="numberOfQuestions"
+                    placeholder="Type the difficulty"
+                    keyboardType="number"
+                    control={control}
+                    onChangeText={onChange}
+                    selectionColor="#fff"
+                    placeholderTextColor="#fff"
+                    value={value}
+                    errors={errors}
+                    secureTextEntry={false}
+                  />
+                </>
+              )}
+              name="numberOfQuestions"
+            />
+          </InputContainer>
+
+          <InputContainer>
+            <Controller
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <>
+                  <Input
+                    name="difficulty"
+                    placeholder="Type the difficulty"
+                    control={control}
+                    onChangeText={onChange}
+                    selectionColor="#fff"
+                    placeholderTextColor="#fff"
+                    value={value}
+                    errors={errors}
+                    secureTextEntry={false}
+                  />
+                </>
+              )}
+              name="difficulty"
+            />
+          </InputContainer>
         </FormArea>
         <StartButton text="Start" onPress={handleSubmit(onSubmit)} />
       </ScrollViewContent>

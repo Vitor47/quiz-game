@@ -47,4 +47,11 @@ export const Input = styled.TextInput`
   font-size: 17px;
   border-radius: 8px;
   margin-bottom: 15px;
+  align-items: center;
+`;
+
+export const HexagonalContainer = styled.View`
+  padding: 10px;
+  bottom: 33%;
+  right: 25%;
 `;

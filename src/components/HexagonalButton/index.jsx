@@ -1,4 +1,4 @@
-import { Button, Button2, Button3, ButtonText } from "./styles";
+import { Button, Button2, Button3, ButtonContainer } from "./styles";
 
 export const LevelButton = ({ onPress, text, activeOpacity }) => {
   return (
