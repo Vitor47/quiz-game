@@ -5,7 +5,6 @@ export const SubmitButton = styled.TouchableOpacity`
   height: 75px;
   left: 22%;
   align-items: center;
-  top: 20px;
   justify-content: center;
   border-radius: 25px;
   background: #00beba;

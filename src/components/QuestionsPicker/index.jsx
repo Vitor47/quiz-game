@@ -12,7 +12,6 @@ const QuestionPicker = ({ control, value, onChange, errors }) => {
           render={({ field: { onChange, value } }) => (
             <Picker
               style={{
-                backgroundColor: "#68B2F8",
                 padding: "2%",
                 color: "#fff",
               }}
@@ -24,10 +23,12 @@ const QuestionPicker = ({ control, value, onChange, errors }) => {
               <Picker.Item label="30" value="30" />
             </Picker>
           )}
-          name="questions"
+          name="numberOfQuestions"
         />
       </PickerContainer>
-      {errors.category && <ErrorText>{errors.category.message}</ErrorText>}
+      {errors.numberOfQuestions && (
+        <ErrorText>{errors.numberOfQuestions.message}</ErrorText>
+      )}
     </>
   );
 };
