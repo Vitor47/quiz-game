@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { StatusBar } from 'react-native';
+import EndGame from './src/pages/EndGame';
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -14,7 +15,7 @@ export default function App() {
     <NavigationContainer>
       <AuthProvider>
         <StatusBar barStyle="dark-content" />
-        <Routes />
+        <EndGame />
       </AuthProvider>
     </NavigationContainer>
   );

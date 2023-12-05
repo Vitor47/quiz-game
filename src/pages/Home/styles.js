@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { Text, View, SafeAreaView, ScrollView } from "react-native";
+import {  View, SafeAreaView, ScrollView } from "react-native";
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
