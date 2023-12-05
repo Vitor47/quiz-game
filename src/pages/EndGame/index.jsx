@@ -1,12 +1,29 @@
 import React, { useState, useContext } from "react";
-import { Platform } from "react-native";
-
+import {
+  Container,
+  ScrollViewContent,
+  FormArea,
+  ResultTitle,
+  CheckImg,
+  StarImg,
+  ResultMessage,
+} from "./styles";
+import Check from "../../../assets/images/Check.png";
+import Stars3 from "../../../assets/images/Star3.png";
 import { useNavigation } from "@react-navigation/native";
 
-import { AuthContext } from "../../contexts/auth";
-
 export default function EndGame() {
-    return (
-        <></>
-    );
+  console.log("Endgame - result");
+  return (
+    <Container>
+      <ScrollViewContent>
+        <FormArea>
+          <ResultTitle>Nice Work!</ResultTitle>
+        </FormArea>
+        <CheckImg source={Check} />
+        <StarImg source={Stars3} />
+        <ResultMessage>You earned X points</ResultMessage>
+      </ScrollViewContent>
+    </Container>
+  );
 }
