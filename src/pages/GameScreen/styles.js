@@ -18,3 +18,13 @@ export const HeaderImg = styled.Image`
   left: 30%;
   top: 15px;
 `;
+
+export const TitlePage = styled.Text`
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  color: #fff;
+  padding: 22px;
+`;

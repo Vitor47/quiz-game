@@ -66,7 +66,7 @@ export default function Home() {
 
   return (
     <Container>
-      <ScrollViewContent>
+      <ScrollViewContent scrollEnabled={true}>
         <HeaderImg source={Sword} />
         <FormArea>
           <InputContainer>

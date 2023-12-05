@@ -8,9 +8,9 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const HeaderImg = styled.Image`
-  width: 40%;
+  width: 50%;
   height: 220px;
-  left: 30%;
+  left: 25%;
   top: 35px;
 `;
 
