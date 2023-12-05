@@ -12,6 +12,7 @@ const QuestionPicker = ({ control, value, onChange, errors }) => {
           render={({ field: { onChange, value } }) => (
             <Picker
               style={{
+                backgroundColor: "#9f7fff",
                 padding: "2%",
                 color: "#fff",
               }}

@@ -18,6 +18,7 @@ import {
   InputContainer,
   Input,
   HeaderImg,
+  InputContainerPicker,
 } from "./styles";
 
 export default function Home() {
@@ -113,7 +114,7 @@ export default function Home() {
             />
           </InputContainer>
 
-          <InputContainer>
+          <InputContainerPicker>
             <Controller
               control={control}
               render={({ field: { onChange, value } }) => (
@@ -128,7 +129,7 @@ export default function Home() {
               )}
               name="numberOfQuestions"
             />
-          </InputContainer>
+          </InputContainerPicker>
           {/* botoes hexagonais, ainda não terminei */}
           {/* <LevelButton text="1" /> */}
         </FormArea>

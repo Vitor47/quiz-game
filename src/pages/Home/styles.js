@@ -11,7 +11,6 @@ export const HeaderImg = styled.Image`
   width: 40%;
   height: 220px;
   left: 30%;
-  top: 35px;
 `;
 
 export const ScrollViewContent = styled(ScrollView)`
@@ -22,7 +21,6 @@ export const FormArea = styled.View`
   padding: 18px;
   border-radius: 5px;
   margin-bottom: 65px;
-  top: 12%;
 `;
 
 export const InputContainer = styled(View)`
@@ -34,6 +32,13 @@ export const InputContainer = styled(View)`
   padding: 15px;
   border-radius: 15px;
   border: 1px solid #d3d3d3;
+`;
+
+export const InputContainerPicker = styled(View)`
+  font-size: 10px;
+  font-weight: 400;
+  padding: 6px 0px 6px 0px;
+  bottom: 35px;
 `;
 
 export const Input = styled.TextInput`
