@@ -16,16 +16,17 @@ export const HeaderImg = styled.Image`
   width: 100%;
   height: 250px;
   top: 20px;
+  margin-bottom: 8%;
 `;
 
 export const IconPass = styled.TouchableOpacity`
   position: fixed;
-  top: 50px;
   left: 40%;
   width: 70px;
   padding: 20px;
   flex-shrink: 0;
   border-radius: 36px;
+  bottom: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: #ff9051;
 `;

@@ -1,10 +1,12 @@
 import { ContainerBaloon, TitleBaloon, TextBaloon } from "./styles";
 
 export const Baloon = ({ title, text }) => {
+  const hasText = text && text.trim() !== "";
+
   return (
     <ContainerBaloon>
-      <TitleBaloon>{title}</TitleBaloon>
-      <TextBaloon>{text}</TextBaloon>
+      <TitleBaloon hasText={hasText}>{title}</TitleBaloon>
+      {hasText && <TextBaloon>{text}</TextBaloon>}
     </ContainerBaloon>
   );
 };

@@ -6,11 +6,14 @@ import { useNavigation } from "@react-navigation/native";
 
 import { AuthContext } from "../../contexts/auth";
 
+import { Baloon } from "../../components/Baloon";
+
 export default function GameScreen() {
-  console.log("game screen");
   return (
     <Container>
-      <ScrollViewContent scrollEnabled={false}></ScrollViewContent>
+      <ScrollViewContent>
+        <Baloon title="QThe best quiz game around"></Baloon>
+      </ScrollViewContent>
     </Container>
   );
 }
