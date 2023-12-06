@@ -13,7 +13,7 @@ APP FireBase Quiz
 
 1. Clone o repositório:
     ```sh
-    $ git clone https://github.com/Vitor47/app-firebase.git
+    $ git clone https://github.com/Vitor47/quiz-game.git
     ```
 2. Instalar dependências:
 
