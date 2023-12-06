@@ -1,15 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
 import { View, ActivityIndicator } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import api from "../../services/api";
 import { Baloon } from "../../components/Baloon";
 import { QuestionButton } from "../../components/QuestionButton";
-import { Container, ScrollViewContent, HeaderImg, TitlePage } from "./styles";
+import { Container, ScrollViewContent, TitlePage } from "./styles";
 
 export default function GameScreen() {
   const navigation = useNavigation();
+  const route = useRoute();
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({});
@@ -36,14 +37,32 @@ export default function GameScreen() {
   };
 
   useEffect(() => {
+    const resetGameScreen = route.params?.resetGameScreen;
+    if (resetGameScreen) {
+      setCurrentQuestionIndex(0);
+      setCorrectAnswers(0);
+      setIncorrectAnswers(0);
+    }
+
     loadQuestions();
   }, []);
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  };
 
   const optionsQuestion =
     questions[currentQuestionIndex]?.incorrect_answers || [];
   const correctAnswer = questions[currentQuestionIndex]?.correct_answer || "";
   optionsQuestion.pop();
   optionsQuestion.push(correctAnswer);
+
+  // Shuffle the options
+  shuffleArray(optionsQuestion);
+
   const question = questions[currentQuestionIndex]?.question || "";
 
   const navigateToNextQuestion = () => {

@@ -24,6 +24,10 @@ export default function EndGame() {
   const route = useRoute();
   const correctAnswers = route.params.correctAnswers;
 
+  const handleNextQuestion = () => {
+    navigation.navigate("GameScreen", { resetGameScreen: true });
+  };
+
   return (
     <Container>
       <ScrollViewContent>
@@ -34,10 +38,7 @@ export default function EndGame() {
           <ResultMessage>You earned {correctAnswers} points</ResultMessage>
         </ContainerContext>
         <ButtonArea>
-          <QuestionButton
-            onPress={() => navigation.navigate("GameScreen")}
-            text="Next Question"
-          />
+          <QuestionButton onPress={handleNextQuestion} text="Next Question" />
           <QuestionButton onPress={signOut} text="Exit" />
         </ButtonArea>
       </ScrollViewContent>
